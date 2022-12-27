@@ -6,10 +6,12 @@
     {% for p in people %}
         <h1>{{ p.name }}</h1>
         <p>{{ p.name }} is currently {{ p.age }} years old.</p>
-        {% if p.job != "Jobless" %}
+        {% if p.job == "jobless" %}
             <p>{{ p.name }} currently works at {{ p.job }}.</p>
-        {% else %}
+        {% elif p.job == "retired" %}
             <p>{{ p.name }} is currently jobless.</p>
+        {% else %}
+            <p>{{ p.name }} is currently retired</p>
         {% endif %}
     {% endfor %}
 {% endblock %}
